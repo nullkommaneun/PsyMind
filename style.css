@@ -1,0 +1,357 @@
+/* Globale Variablen für einfaches Anpassen */
+:root {
+    --color-primary: #3498db;     /* Hauptblau */
+    --color-primary-dark: #2980b9;
+    --color-secondary: #2ecc71;   /* Grün für Therapeuten */
+    --color-secondary-dark: #27ae60;
+    --color-text: #333;
+    --color-text-light: #f8f8f8;
+    --color-bg-light: #ffffff;
+    --color-bg-medium: #f9f9f9;
+    --color-bg-dark: #2c3e50;    /* Dunkler Hintergrund für Sicherheitssektion */
+    --color-border: #e0e0e0;
+    --font-main: 'Inter', sans-serif;
+    --content-width: 1100px;
+}
+
+/* Basis-Reset und Schriftart */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth; /* Sanftes Scrollen bei Anker-Klicks */
+}
+
+body {
+    font-family: var(--font-main);
+    color: var(--color-text);
+    background-color: var(--color-bg-light);
+    line-height: 1.6;
+}
+
+/* 1. Allgemeine Helferklassen */
+.container {
+    max-width: var(--content-width);
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* 2. Button-Stile */
+.btn {
+    display: inline-block;
+    padding: 12px 28px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-primary {
+    background-color: var(--color-primary);
+    color: #fff;
+}
+.btn-primary:hover {
+    background-color: var(--color-primary-dark);
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    background-color: var(--color-secondary);
+    color: #fff;
+}
+.btn-secondary:hover {
+    background-color: var(--color-secondary-dark);
+    transform: translateY(-2px);
+}
+
+.btn-secondary-dark {
+    background-color: transparent;
+    color: var(--color-text);
+    border: 2px solid var(--color-text);
+}
+.btn-secondary-dark:hover {
+    background-color: var(--color-text);
+    color: var(--color-bg-medium);
+}
+
+/* 3. Header & Navigation */
+.header {
+    background-color: var(--color-bg-light);
+    border-bottom: 1px solid var(--color-border);
+    padding: 15px 0;
+    position: sticky; /* Moderner Sticky-Header */
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--color-primary);
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.nav-links li {
+    margin: 0 15px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--color-text);
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: var(--color-primary);
+}
+
+.nav-btn-login {
+    display: none; /* Knopf für Mobile/Tablet ausblenden, auf Desktop anzeigen */
+}
+
+/* 4. Hero-Bereich */
+.hero {
+    background-color: var(--color-bg-medium);
+    padding: 80px 0;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 48px;
+    font-weight: 700;
+    color: var(--color-bg-dark);
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+.hero .subtitle {
+    font-size: 20px;
+    color: #555;
+    margin-bottom: 40px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.hero-ctas {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap; /* Buttons umbrechen auf Mobile */
+}
+
+/* 5. Feature-Sektion (Problem & Sicherheit) */
+.feature-section, .feature-section-dark {
+    padding: 80px 0;
+    text-align: center;
+}
+.feature-section h2, .feature-section-dark h2 {
+    font-size: 36px;
+    margin-bottom: 50px;
+}
+
+.feature-section-dark {
+    background-color: var(--color-bg-dark);
+    color: var(--color-text-light);
+}
+
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsives Grid */
+    gap: 30px;
+    text-align: left;
+}
+
+.feature-card {
+    background-color: var(--color-bg-light);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+/* Für die dunkle Sektion */
+.feature-section-dark .feature-card {
+    background-color: #34495e; /* Etwas heller als der Hintergrund */
+    color: var(--color-text-light);
+}
+
+.feature-card .icon {
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+
+.feature-card h3 {
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+/* 6. Lösungs-Sektion */
+.solution-section {
+    padding: 80px 0;
+    background-color: var(--color-bg-medium);
+    text-align: center;
+}
+.solution-section h2 {
+    font-size: 36px;
+    margin-bottom: 50px;
+}
+.solution-steps {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+}
+.step {
+    flex: 1;
+    text-align: center;
+}
+.step-number {
+    width: 60px;
+    height: 60px;
+    background-color: var(--color-primary);
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    font-weight: 700;
+    margin: 0 auto 20px auto;
+}
+.step h3 {
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+/* 7. CTA-Sektion (Für Therapeuten) */
+.cta-section {
+    padding: 80px 0;
+    text-align: center;
+    background-color: var(--color-bg-light);
+}
+.cta-section h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+.cta-section p {
+    font-size: 18px;
+    max-width: 700px;
+    margin: 0 auto 30px auto;
+}
+
+/* 8. Wartelisten-Sektion (Smoke Test) */
+.warteliste-section {
+    padding: 80px 0;
+    background-color: var(--color-bg-medium);
+    text-align: center;
+}
+.warteliste-section h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+.warteliste-section p {
+    font-size: 18px;
+    margin-bottom: 40px;
+}
+.form-container {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap; /* Formulare umbrechen auf Mobile */
+}
+.form-box {
+    background-color: var(--color-bg-light);
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    flex-basis: 450px; /* Basisbreite für beide Boxen */
+    text-align: left;
+}
+.form-box h3 {
+    font-size: 24px;
+    margin-bottom: 25px;
+    text-align: center;
+}
+.form-box form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.form-box input[type="email"] {
+    width: 100%;
+    padding: 14px;
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    font-size: 16px;
+    font-family: var(--font-main);
+}
+.form-box button {
+    width: 100%;
+}
+
+/* 9. Footer */
+.footer {
+    background-color: var(--color-bg-dark);
+    color: #aaa;
+    padding: 40px 0;
+    text-align: center;
+    font-size: 14px;
+}
+.footer-links a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 10px;
+}
+.footer-links a:hover {
+    text-decoration: underline;
+}
+
+/* 10. Responsive Design für Mobilgeräte */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none; /* Simples Ausblenden der Links auf Mobile, Knopf bleibt */
+    }
+    .nav-btn-login {
+        display: block; /* Zeigt den "Starten" Knopf im Header an */
+        padding: 8px 16px;
+        background-color: var(--color-primary);
+        color: #fff;
+        border-radius: 5px;
+        text-decoration: none;
+    }
+
+    .hero h1 {
+        font-size: 36px;
+    }
+    .hero .subtitle {
+        font-size: 18px;
+    }
+
+    .solution-steps {
+        flex-direction: column; /* Schritte untereinander stapeln */
+    }
+
+    .form-container {
+        flex-direction: column;
+        gap: 20px;
+    }
+    .form-box {
+        flex-basis: 100%; /* Volle Breite für Formulare */
+    }
+}
